@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/edit.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="">
+        <h1>Edit Yor Blog</h1>
+        <p>blog Id : <%= blog.id %></p>
+        <p>blog's Username : <%= blog.username %></p>
+      </div>
+      <div class="form">
+        <form action="/posts/<%= blog.id %>?_method=PATCH" method="POST">
+          <textarea name="content" id="" cols="30" rows="10">
+        <%= blog.content %></textarea
+          >
+          <button>Submit</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blogs</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>You Can See The Blogs Here</h1>
+      <div class="container">
+        <% for( let blog of blogs ) { %>
+        <div class="column">
+          <!-- blog -->
+          <div class="blog">
+            <h3 class="user"><%= blog.username %></h3>
+            <h4 class="content"><%= blog.content %></h4>
+          </div>
+          <!-- buttons -->
+          <div class="btn-div">
+            <a href="http://localhost:8080/posts/<%= blog.id %>/edit">
+              <button class="btn">Edit</button>
+            </a>
+            <form action="/posts/<%= blog.id %>?_method=DELETE" method="post">
+              <button class="btn">Delete</button>
+            </form>
+          </div>
+        </div>
+        <% } %>
+      </div>
+
+      <div class="create">
+        <a href="http://localhost:8080/posts/new">
+          <button>Create A New Post</button>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
